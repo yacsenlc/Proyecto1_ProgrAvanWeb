@@ -1,0 +1,40 @@
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\bin\Debug\net5.0\appsettings.json
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\bin\Debug\net5.0\Proyecto-Help Desk.exe
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\bin\Debug\net5.0\Proyecto-Help Desk.deps.json
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\bin\Debug\net5.0\Proyecto-Help Desk.runtimeconfig.json
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\bin\Debug\net5.0\Proyecto-Help Desk.runtimeconfig.dev.json
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\bin\Debug\net5.0\Proyecto-Help Desk.dll
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\bin\Debug\net5.0\ref\Proyecto-Help Desk.dll
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\bin\Debug\net5.0\Proyecto-Help Desk.pdb
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\bin\Debug\net5.0\Proyecto-Help Desk.Views.dll
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\bin\Debug\net5.0\Proyecto-Help Desk.Views.pdb
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\obj\Debug\net5.0\Proyecto-Help Desk.csproj.AssemblyReference.cache
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\obj\Debug\net5.0\Proyecto-Help Desk.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\obj\Debug\net5.0\Proyecto-Help Desk.AssemblyInfoInputs.cache
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\obj\Debug\net5.0\Proyecto-Help Desk.AssemblyInfo.cs
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\obj\Debug\net5.0\Proyecto-Help Desk.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\obj\Debug\net5.0\Proyecto-Help Desk.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\obj\Debug\net5.0\Proyecto-Help Desk.RazorAssemblyInfo.cache
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\obj\Debug\net5.0\Proyecto-Help Desk.RazorAssemblyInfo.cs
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\obj\Debug\net5.0\staticwebassets\Proyecto-Help Desk.StaticWebAssets.Manifest.cache
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\obj\Debug\net5.0\staticwebassets\Proyecto-Help Desk.StaticWebAssets.xml
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\obj\Debug\net5.0\scopedcss\bundle\Proyecto-Help Desk.styles.css
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\obj\Debug\net5.0\Proyecto-Help Desk.TagHelpers.input.cache
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\obj\Debug\net5.0\Proyecto-Help Desk.TagHelpers.output.cache
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\obj\Debug\net5.0\Proyecto-Help Desk.RazorCoreGenerate.cache
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\obj\Debug\net5.0\Proyecto-Help Desk.RazorTargetAssemblyInfo.cache
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\obj\Debug\net5.0\Proyecto-Help Desk.RazorTargetAssemblyInfo.cs
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\obj\Debug\net5.0\Proyecto-Help Desk.Views.pdb
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\obj\Debug\net5.0\Proyecto-Help Desk.dll
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\obj\Debug\net5.0\ref\Proyecto-Help Desk.dll
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\obj\Debug\net5.0\Proyecto-Help Desk.pdb
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\obj\Debug\net5.0\Proyecto-Help Desk.genruntimeconfig.cache
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\obj\Debug\net5.0\Proyecto-Help Desk.csproj.CopyComplete
