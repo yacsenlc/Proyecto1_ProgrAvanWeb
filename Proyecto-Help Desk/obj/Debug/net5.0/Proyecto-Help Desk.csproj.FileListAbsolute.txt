@@ -77,3 +77,4 @@ C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\obj\Debug\net
 C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\obj\Debug\net5.0\Razor\Views\Tickets\MisNuevos.cshtml.g.cs
 C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\obj\Debug\net5.0\Razor\Views\Tickets\Nuevo.cshtml.g.cs
 C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\obj\Debug\net5.0\Razor\Views\Home\Login.cshtml.g.cs
+C:\Users\Lenovo\source\repos\Proyecto-Help Desk\Proyecto-Help Desk\obj\Debug\net5.0\Razor\Views\Home\LoginEspecialist.cshtml.g.cs

@@ -42,7 +42,10 @@ namespace Proyecto_Help_Desk.Controllers
             return View();
         }
         public IActionResult Especialista()
+
         {
+            ViewBag.NombreUsuarioEspecialista = TempData["NombreUsuarioEspecialista"] ?? "Especialista";
+
             return View();
         }
 
@@ -51,7 +54,11 @@ namespace Proyecto_Help_Desk.Controllers
         {
             return View();
         }
-
+        // Mostrar LoginEspecialista
+        public IActionResult LoginEspecialist()
+        {
+            return View();
+        }
         // Procesar Login
         [HttpPost]
         public IActionResult Login(string usuario, string password)
@@ -62,11 +69,35 @@ namespace Proyecto_Help_Desk.Controllers
 
                 return RedirectToAction("Usuario");
             }
-            else if (usuario == "pablo" && password == "1234")
+            else if (usuario == "y" && password == "1234")
             {
-                TempData["NombreUsuario"] = "Pablo";
+                TempData["NombreUsuario"] = "Yacsen.";
 
                 return RedirectToAction("Usuario");
+            }
+            else
+            {
+                ViewBag.Error = "Usuario o contraseña incorrectos.";
+
+                return View();
+            }
+        }
+
+        // Procesar LoginEspecialista
+        [HttpPost]
+        public IActionResult LoginEspecialist(string Especialista, string passw)
+        {
+            if (Especialista == "y" && passw == "1234")
+            {
+                TempData["NombreUsuarioEspecialista"] = "Yacsen";
+
+                return RedirectToAction("Especialista");
+            }
+            else if (Especialista == "yacsen." && passw == "1234")
+            {
+                TempData["NombreUsuarioEspecialista"] = "Yacsen.";
+
+                return RedirectToAction("Especialista");
             }
             else
             {

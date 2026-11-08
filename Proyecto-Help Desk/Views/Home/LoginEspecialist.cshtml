@@ -1,0 +1,163 @@
+﻿@{
+    ViewData["Title"] = "Modo Especialista";
+}
+
+<div class="container d-flex justify-content-center align-items-center"
+     style="min-height: 85vh;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <div class="card shadow-lg border-0"
+         style="width: 430px; border-radius: 15px;">
+
+        <div class="card-body p-5 text-center">
+
+            <i class="bi bi-person-circle"
+               style="font-size: 75px; color: #0d6efd;"></i>
+
+            <h2 class="mt-3">Iniciar sesión Especialista</h2>
+
+            <p class="text-muted mb-4">
+                Ingresa tus credenciales especiales para continuar
+            </p>
+            @if (ViewBag.Error != null)
+            {
+                <div class="alert alert-danger text-center">
+                    @ViewBag.Error
+                </div>
+            }
+
+            <form asp-controller="Home"
+                  asp-action="LoginEspecialist"
+                  method="post">
+
+                <div class="mb-3 text-start">
+                    <label class="form-label">Especialista</label>
+                    <input type="text"
+                           name="Especialista"
+                           class="form-control"
+                           placeholder="Ingrese su usuario especialista"
+                           required />
+                </div>
+
+                <div class="mb-3 text-start">
+                    <label class="form-label">Contraseña</label>
+                    <input type="password"
+                           name="passw"
+                           class="form-control"
+                           placeholder="Ingrese su contraseña"
+                           required />
+                </div>
+
+                <div class="text-end mb-4">
+                    <a href="#" class="text-decoration-none"
+                       onclick="abrirRecuperacion(); return false;">
+                        ¿Olvidaste tu contraseña?
+                    </a>
+                </div>
+
+                <button type="submit"
+                        class="btn btn-primary btn-lg w-100">
+                    Ingresar
+                </button>
+
+            </form>
+
+            <div class="mt-3">
+                <a asp-controller="Home"
+                   asp-action="Index"
+                   class="text-secondary text-decoration-none">
+                    Volver al inicio
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- MODAL RECUPERAR CONTRAS<!-- VENTANA RECUPERAR CONTRASEÑA -->
+
+<div class="modal fade" id="recuperarModal"
+     tabindex="-1" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+                    Recuperar contraseña
+                </h5>
+
+                <button type="button"
+                        class="btn-close"
+                        onclick="cerrarRecuperacion()">
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <p>
+                    Ingresa tu correo electrónico para recibir
+                    las instrucciones de recuperación.
+                </p>
+
+                <form asp-controller="Home"
+                      asp-action="LoginEspecialist"
+                      method="post">
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Correo electrónico
+                        </label>
+
+                        <input type="email"
+                               name="correo"
+                               class="form-control"
+                               placeholder="ejemplo@correo.com"
+                               required />
+
+                    </div>
+
+                    <button type="submit"
+                            class="btn btn-primary w-100">
+                        Enviar
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+    function abrirRecuperacion() {
+
+        var modalElemento = document.getElementById('recuperarModal');
+
+        var modal = new bootstrap.Modal(modalElemento);
+
+        modal.show();
+    }
+
+    function cerrarRecuperacion() {
+
+        var modalElemento = document.getElementById('recuperarModal');
+
+        var modal = bootstrap.Modal.getInstance(modalElemento);
+
+        if (modal) {
+            modal.hide();
+        }
+
+    }
+
+</script>

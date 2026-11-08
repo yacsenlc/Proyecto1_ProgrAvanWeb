@@ -2,100 +2,183 @@
 @model Proyecto_Help_Desk.Models.Ticket
 
 @{
-    ViewData["Title"] = "Crear Ticket";
+    ViewBag.Title = "Crear tiquete";
 }
 
-<div class="container mt-5">
 
-    <div class="card shadow">
+<style>
+    body {
+        background: linear-gradient(135deg, #dbeafe, #e9d5ff);
+        min-height: 100vh;
+        font-family: 'Segoe UI', sans-serif;
+    }
 
-        <div class="card-header bg-primary text-white">
-            <h3>Crear ticket de soporte</h3>
-            <p class="mb-0">
-                Describe el problema que necesitas solucionar.
-            </p>
-        </div>
+    .formulario-tiquete {
+        background-color: #ffffff;
+        padding: 35px;
+        border-radius: 18px;
+        box-shadow: 0 8px 25px rgba(70, 60, 120, 0.15);
+        max-width: 700px;
+        margin: 40px auto;
+    }
 
-        <div class="card-body">
+        .formulario-tiquete h2 {
+            color: #5b4b9a;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
 
-            <form asp-action="Crear" method="post">
+        .formulario-tiquete p {
+            color: #777;
+            margin-bottom: 25px;
+        }
 
-                @Html.AntiForgeryToken()
+    .form-label {
+        color: #514477;
+        font-weight: 600;
+    }
 
-                <div asp-validation-summary="ModelOnly"
-                     class="text-danger mb-3"></div>
+    .form-control,
+    .form-select {
+        border: 1px solid #d8cdef;
+        border-radius: 10px;
+        padding: 12px;
+        background-color: #faf9ff;
+    }
 
-                <div class="mb-3">
-                    <label asp-for="Titulo"
-                           class="form-label">
-                        Título del problema
-                    </label>
+        .form-control:focus,
+        .form-select:focus {
+            border-color: #9b83db;
+            box-shadow: 0 0 0 0.2rem rgba(155, 131, 219, 0.2);
+        }
 
-                    <input asp-for="Titulo"
-                           class="form-control"
-                           placeholder="Ejemplo: Mi computadora no enciende" />
+    .btn-guardar {
+        background: linear-gradient(135deg, #8064c9, #a78bfa);
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 10px;
+        font-weight: 600;
+        transition: 0.3s;
+    }
 
-                    <span asp-validation-for="Titulo"
-                          class="text-danger"></span>
-                </div>
+        .btn-guardar:hover {
+            background: linear-gradient(135deg, #6d50b5, #9272e8);
+            color: white;
+            transform: translateY(-2px);
+        }
+</style>
 
-                <div class="mb-3">
-                    <label asp-for="Descripcion"
-                           class="form-label">
-                        Descripción
-                    </label>
+<div class="container mt-4">
 
-                    <textarea asp-for="Descripcion"
-                              class="form-control"
-                              rows="5"
-                              placeholder="Describe detalladamente el problema..."></textarea>
+    <div class="formulario-tiquete">
 
-                    <span asp-validation-for="Descripcion"
-                          class="text-danger"></span>
-                </div>
+        <h2>Nuevo tiquete</h2>
+        <p>Completa los siguientes datos:</p>
 
-                <div class="mb-4">
-                    <label asp-for="IdCategoria"
-                           class="form-label">
-                        Categoría
-                    </label>
+        <form id="formTiquete">
 
-                    <select asp-for="IdCategoria"
-                            asp-items="ViewBag.Categorias"
-                            class="form-select">
+            <div class="mb-3">
+                <label class="form-label">Título</label>
+                <input type="text" id="titulo" class="form-control"
+                       placeholder="Ingrese el título" required />
+            </div>
 
-                        <option value="">
-                            Selecciona una categoría
-                        </option>
+            <div class="mb-3">
+                <label class="form-label">Descripción</label>
+                <textarea id="descripcion" class="form-control"
+                          rows="4" placeholder="Ingrese la descripción"
+                          required></textarea>
+            </div>
 
-                    </select>
+            <div class="mb-4">
+                <label class="form-label">Categoría</label>
+                <select id="categoria" class="form-select" required>
+                    <option value="">Seleccione una categoría</option>
+                    <option value="Soporte técnico">Soporte técnico</option>
+                    <option value="Mantenimiento">Mantenimiento</option>
+                    <option value="Solicitud">Solicitud</option>
+                    <option value="Otro">Otro</option>
+                </select>
+            </div>
 
-                    <span asp-validation-for="IdCategoria"
-                          class="text-danger"></span>
-                </div>
+            <button type="submit" class="btn btn-guardar">
+                Crear tiquete
+            </button>
 
-                <div class="d-flex gap-2">
+        </form>
 
-                    <button type="submit"
-                            class="btn btn-primary">
-                        Registrar ticket
-                    </button>
+    </div>
+</div>
 
-                    <a asp-action="MisTickets"
-                       class="btn btn-secondary">
-                        Cancelar
-                    </a>
 
-                </div>
+<!-- MODAL DE ÉXITO -->
+<div class="modal fade" id="modalExito" tabindex="-1"
+     aria-labelledby="modalExitoLabel" aria-hidden="true">
 
-            </form>
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalExitoLabel">
+                    ¡Tiquete creado!
+                </h5>
+                <button type="button" class="btn-close"
+                        data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body text-center">
+                <h4 class="text-success">✓</h4>
+                <p>El tiquete se creó exitosamente.</p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary"
+                        id="btnAceptar">
+                    Aceptar
+                </button>
+            </div>
 
         </div>
     </div>
 </div>
 
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}
+<script>
+
+document.getElementById("formTiquete").addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    const tiquete = {
+        titulo: document.getElementById("titulo").value,
+        descripcion: document.getElementById("descripcion").value,
+        categoria: document.getElementById("categoria").value
+    };
+
+    let tiquetes = JSON.parse(localStorage.getItem("tiquetes")) || [];
+
+    tiquetes.push(tiquete);
+
+    localStorage.setItem("tiquetes", JSON.stringify(tiquetes));
+
+    // Mostrar modal de éxito
+    const modal = new bootstrap.Modal(
+        document.getElementById("modalExito")
+    );
+
+    modal.show();
+
+    // Limpiar formulario
+    document.getElementById("formTiquete").reset();
+
+});
+
+// Al aceptar, ir a MisTickets
+document.getElementById("btnAceptar").addEventListener("click", function() {
+
+    window.location.href = '@Url.Action("Crear", "Tickets")';
+
+});
+
+</script>
+
