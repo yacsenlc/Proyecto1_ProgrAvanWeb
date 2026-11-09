@@ -3,7 +3,7 @@
 }
 
 <div class="container mt-5 text-center">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <div class="text-center mb-5">
@@ -22,17 +22,35 @@
     <h2>Help Desk- Solicitudes de trabajo</h2>
     <p>Consulta, asigna técnicos y administra el estado de tus tiquetes.</p>
 
+
     <!-- BUSCADOR -->
-    <div class="row mb-3">
+    <div class="row mb-3 align-items-center">
+
         <div class="col-md-6">
             <input type="text" id="buscarTiquete"
                    class="form-control"
                    placeholder="Buscar por título, descripción o categoría..." />
         </div>
+
+        <div class="col-md-6 text-end">
+            <button type="button"
+                    class="btn btn-success"
+                    onclick="generarReporte()">
+
+                <i class="bi bi-file-earmark-excel"></i>
+                Generar reportes
+
+            </button>
+        </div>
+
     </div>
+
+
+
 
     <!-- TABLA -->
     <div class="table-responsive">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <table class="table table-bordered table-striped align-middle">
 
             <thead class="table-dark">
@@ -464,6 +482,76 @@
             modal.hide();
         }
     }
+
+
+
+    // GENERAR REPORTE DE TODOS LOS TIQUETES
+    function generarReporte() {
+
+        // Obtener TODOS los tiquetes almacenados
+        const tiquetes = obtenerTiquetes();
+
+        // Verificar que existan registros
+        if (tiquetes.length === 0) {
+            alert("No hay tiquetes registrados para generar el reporte.");
+            return;
+        }
+
+        // Encabezados del reporte
+        const encabezados = [
+            "Título",
+            "Descripción",
+            "Categoría",
+            "Técnico asignado",
+            "Estado"
+        ];
+
+        // Obtener toda la información
+        const filas = tiquetes.map(tiquete => [
+
+            tiquete.titulo || "",
+            tiquete.descripcion || "",
+            tiquete.categoria || "",
+            tiquete.tecnicoAsignado || "Sin asignar",
+            tiquete.estado || "Abierto"
+
+        ]);
+
+        // Convertir los datos a formato CSV
+        const contenido = [encabezados, ...filas]
+            .map(fila =>
+                fila.map(valor =>
+                    '"' + String(valor).replace(/"/g, '""') + '"'
+                ).join(";")
+            )
+            .join("\r\n");
+
+        // Crear archivo descargable
+        const archivo = new Blob(
+            ["\uFEFF" + contenido],
+            { type: "text/csv;charset=utf-8;" }
+        );
+
+        // Crear enlace de descarga
+        const enlace = document.createElement("a");
+
+        const url = URL.createObjectURL(archivo);
+
+        enlace.href = url;
+        enlace.download = "Reporte_Tiquetes_HelpDesk.csv";
+
+        document.body.appendChild(enlace);
+
+        enlace.click();
+
+        document.body.removeChild(enlace);
+
+        URL.revokeObjectURL(url);
+
+        // Confirmar descarga
+        alert("¡Reporte generado correctamente!\nTotal de tiquetes: " + tiquetes.length);
+    }
+
 
 </script>
 
